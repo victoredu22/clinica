@@ -24,4 +24,4 @@ jobs:
         issuetype: Task
         summary: Problema en repositorio ${{ github.repository }}
         description: Bug
-        fields: '{"customfield_10171": "test"}'
+        #fields: '{"customfield_10171": "test"}'
