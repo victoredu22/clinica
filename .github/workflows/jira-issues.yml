@@ -15,3 +15,13 @@ jobs:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
         JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+   
+    - name: Create
+      id: create
+      uses: atlassian/gajira-create@v3
+      with:
+        project: DF
+        issuetype: Issue
+        summary: Problema en repositorio ${{ github.repository }}
+        description: Bug
+        fields: '{"customfield_10171": "test"}'
