@@ -9,3 +9,12 @@ steps:
     echo $(REPOSITORIO)
     echo $(STATUSACTION)
   displayName: 'Print variables'
+- task: azuredevopsgithub@0
+  inputs:
+    gitHubConnection: 'GitHub-token'
+    method: 'GET'
+    githubrestapiurl: 'https://api.github.com/repos/DevOps-Foundation-v3/pet-clinic/actions/artifacts/473249294'
+
+- script: |
+    ls -ltra $(Build.SourcesDirectory)
+  displayName: Validacion descarga
