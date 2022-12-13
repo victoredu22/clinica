@@ -16,5 +16,5 @@ steps:
     githubrestapiurl: 'https://api.github.com/repos/DevOps-Foundation-v3/pet-clinic/actions/artifacts/473249294/zip'
 
 - script: |
-    ls $(Build.SourcesDirectory)
+    ls $(Build.SourcesDirectory)/Package
   displayName: Validacion descarga
