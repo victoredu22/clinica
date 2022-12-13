@@ -18,8 +18,8 @@ steps:
 - script: |
     cd $(Build.SourcesDirectory)
     curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $(TOKEN-GITHUB)" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/DevOps-Foundation-v3/pet-clinic/actions/artifacts/473249294/zip > url.txt
-    cat url.txt
+    cat $(Build.SourcesDirectory)/url.txt
     #unzip $(Build.SourcesDirectory)/artefacto.zip
-    ls $(Build.SourcesDirectory)
+    #ls $(Build.SourcesDirectory)
   displayName: Validacion descarga
   continueOnError: true
