@@ -21,7 +21,7 @@ jobs:
       uses: atlassian/gajira-create@v3
       with:
         project: DF
-        issuetype: Bug
+        issuetype: Task
         summary: Problema en repositorio ${{ github.repository }}
         description: Bug
         fields: '{"customfield_10171": "test"}'
