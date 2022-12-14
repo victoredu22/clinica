@@ -1,6 +1,8 @@
 name: Java CI with Gradle
 
 on:
+  issues:
+    types: [opened, edited, milestoned]
   #push:
     #branches: [ "main", "feature-*" ]
   #pull_request:
