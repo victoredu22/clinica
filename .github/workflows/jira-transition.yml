@@ -1,0 +1,30 @@
+on:
+  push:
+
+name: Jira
+
+jobs:
+  
+  build:
+    runs-on: ubuntu-latest
+    name: Jira Example
+    
+    steps:
+    
+    - name: Login
+      uses: atlassian/gajira-login@v3
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+   
+    - name: Find issue in branch
+      uses: atlassian/gajira-find-issue-key@v3
+      with:
+        string: ${{ github.event.ref }}
+        
+    - name: Transition issue
+      uses: atlassian/gajira-transition@master
+      with:
+        issue: ${{ steps.create.outputs.issue }}
+        transition: "Desarrollo"
