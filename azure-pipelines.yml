@@ -2,13 +2,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: |
+      git fetch --unshallow
+  displayName: 'convert to non-shallow clone' 
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'sonarcloud'
     organization: 'victoredu22'
     projectKey: 'victoredu22_clinica'
     projectName: 'clinica'
-    scannerMode: 'Other'
 
 - task: Gradle@3
   inputs:
