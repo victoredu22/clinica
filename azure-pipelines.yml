@@ -5,7 +5,7 @@ steps:
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'sonarcloud'
-    organization: 'victoredu22'
+    organization: 'victoredu22ppp'
     projectKey: 'victoredu22_clinica'
     projectName: 'clinica'
     scannerMode: 'Other'
