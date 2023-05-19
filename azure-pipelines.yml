@@ -2,15 +2,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'microservicio'
+    SonarCloud: 'sonarcloud'
     organization: 'victoredu22'
     projectKey: 'victoredu22_clinica'
     projectName: 'clinica'
     scannerMode: 'Other'
-  displayName: 'Sonarcloud Prepare'
 
 - task: Gradle@3
   inputs:
